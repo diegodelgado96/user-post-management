@@ -18,10 +18,12 @@
         public function register($name, $email, $password)
         {
             try {
+                $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
+
                 $stmt = $this->db->prepare("INSERT INTO {$this->table} (name, email, password) VALUES (:name, :email, :password)");
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':email', $email);
-                $stmt->bindParam(':password', password_hash($password, PASSWORD_BCRYPT));
+                $stmt->bindParam(':password', $hashedPassword);
                 return $stmt->execute();
             } catch (Exception $e) {
                 return false;
@@ -38,6 +40,7 @@
                 $user = $stmt->fetch(PDO::FETCH_ASSOC);
     
                 if ($user && password_verify($password, $user['password'])) {
+                    unset($user['password']);
                     return $user;
                 }
     
