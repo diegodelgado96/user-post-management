@@ -15,13 +15,14 @@
             $this->db = (new Database())->connect();
         }
     
-        public function create($userId, $title, $content)
+        public function create($userId, $title, $content, $category_id)
         {
             try {
-                $stmt = $this->db->prepare("INSERT INTO {$this->table} (user_id, title, content) VALUES (:user_id, :title, :content)");
+                $stmt = $this->db->prepare("INSERT INTO {$this->table} (user_id, title, content, category_id) VALUES (:user_id, :title, :content, :category_id)");
                 $stmt->bindParam(':user_id', $userId);
                 $stmt->bindParam(':title', $title);
                 $stmt->bindParam(':content', $content);
+                $stmt->bindParam(':category_id', $category_id);
                 return $stmt->execute();
             } catch (Exception $e) {
                 return false;

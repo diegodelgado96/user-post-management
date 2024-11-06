@@ -12,9 +12,10 @@
                 $userId = $data['user_id'];
                 $title = $data['title'];
                 $content = $data['content'];
+                $category_id = $data['category_id'];
     
                 $post = new Post();
-                if ($post->create($userId, $title, $content)) {
+                if ($post->create($userId, $title, $content, $category_id)) {
                     echo json_encode(['message' => 'Post created successfully']);
                 } else {
                     echo json_encode(['message' => 'Failed to create post']);
