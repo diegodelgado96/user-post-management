@@ -1,0 +1,14 @@
+<div>
+	<h2>Posts in Category {{ categoryId }}</h2>
+
+	<div *ngIf="posts.length > 0; else noPosts">
+		<div *ngFor="let post of posts" class="post-card">
+			<h3>{{ post.title }}</h3>
+			<p>{{ post.content }}</p>
+		</div>
+	</div>
+
+	<ng-template #noPosts>
+		<p>No posts found for this category.</p>
+	</ng-template>
+</div>
