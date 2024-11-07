@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "PhotoExpress.Views": {
+    "UserPostManagement.Views": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -58,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "PhotoExpress.Views:build:production"
+              "buildTarget": "UserPostManagement.Views:build:production"
             },
             "development": {
-              "buildTarget": "PhotoExpress.Views:build:development"
+              "buildTarget": "UserPostManagement.Views:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -69,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "PhotoExpress.Views:build"
+            "buildTarget": "UserPostManagement.Views:build"
           }
         },
         "test": {

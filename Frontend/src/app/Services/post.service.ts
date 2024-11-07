@@ -7,14 +7,14 @@ import { ResponseApi } from "../Interfaces/responseApiInterface";
 @Injectable({
 	providedIn: 'root'
 })
-export class UserService {
+export class PostService {
 
 	private apiUrl: string = environment.endpoint;
 
 	constructor(private http: HttpClient) { }
 
 	// Obtener posts por categoría
-  getPostsByCategory(categoryId: number): Observable<ResponseApi> {
+  getPostsByCategory(categoryId: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/posts/${categoryId}`);
   }
 
