@@ -2,6 +2,7 @@
 
 */vendor/*
 */.env
+*/composer.lock
 /config/app.php
 
 /tmp/cache/models/*
