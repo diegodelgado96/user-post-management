@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../Modules/shared/shared.module';
 import { UserService } from '../../Services/user.service';
+import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-register',
 	standalone: true,
-	imports: [SharedModule],
+	imports: [HttpClientModule, RouterOutlet, SharedModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })

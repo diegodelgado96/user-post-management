@@ -19,7 +19,7 @@ export class PostService {
   }
 
   // Crear un nuevo post
-  createPost(userId: number, title: string, content: string, categoryId: number): Observable<ResponseApi> {
+  createPost(userId: number, title: string, content: string, categoryId: number): Observable<any> {
     const data = { user_id: userId, title, content, category_id: categoryId };
     return this.http.post(`${this.apiUrl}/posts`, data);
   }

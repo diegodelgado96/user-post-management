@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../Services/post.service'; // Importa el servicio de posts
 import { SharedModule } from '../../Modules/shared/shared.module';
+import { RouterOutlet } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
 	selector: 'app-posts',
 	standalone: true,
-	imports: [SharedModule],
+	imports: [HttpClientModule, RouterOutlet, SharedModule],
 	templateUrl: './posts.component.html',
 	styleUrls: ['./posts.component.css']
 })

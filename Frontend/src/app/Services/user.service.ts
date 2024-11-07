@@ -14,13 +14,13 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // Registrar un nuevo usuario
-  registerUser(name: string, email: string, password: string): Observable<ResponseApi> {
+  registerUser(name: string, email: string, password: string): Observable<any> {
     const data = { name, email, password };
     return this.http.post(`${this.apiUrl}/register`, data);
   }
 
   // Login de un usuario
-  loginUser(email: string, password: string): Observable<ResponseApi> {
+  loginUser(email: string, password: string): Observable<any> {
     const data = { email, password };
     return this.http.post(`${this.apiUrl}/login`, data);
 	}
