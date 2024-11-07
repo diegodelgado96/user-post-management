@@ -25,3 +25,9 @@
 /app/Config/core.php
 /app/Config/database.php
 /vendors/*
+
+
+#Angular
+*/node_modules
+*/package-lock.json
+*/.angular

@@ -27,9 +27,9 @@ class UserControllerTest extends TestCase
         file_put_contents('php://input', $data);
 
         $this->mockUser->expects($this->once())
-                       ->method('register')
-                       ->with('John Doe', 'john@example.com', 'password123')
-                       ->willReturn(true);
+                    ->method('register')
+                    ->with('John Doe', 'john@example.com', 'password123')
+                    ->willReturn(true);
 
         $this->controller->register();
 
@@ -45,9 +45,9 @@ class UserControllerTest extends TestCase
         file_put_contents('php://input', $data);
 
         $this->mockUser->expects($this->once())
-                       ->method('register')
-                       ->with('John Doe', 'john@example.com', 'password123')
-                       ->willReturn(false);
+                    ->method('register')
+                    ->with('John Doe', 'john@example.com', 'password123')
+                    ->willReturn(false);
 
         $this->controller->register();
 
@@ -63,13 +63,13 @@ class UserControllerTest extends TestCase
         file_put_contents('php://input', $data);
 
         $this->mockUser->expects($this->once())
-                       ->method('authenticate')
-                       ->with('john@example.com', 'password123')
-                       ->willReturn([
-                           'id' => 1,
-                           'name' => 'John Doe',
-                           'email' => 'john@example.com',
-                       ]);
+                    ->method('authenticate')
+                    ->with('john@example.com', 'password123')
+                    ->willReturn([
+                        'id' => 1,
+                        'name' => 'John Doe',
+                        'email' => 'john@example.com',
+                    ]);
 
         $this->controller->login();
 
@@ -86,9 +86,9 @@ class UserControllerTest extends TestCase
         file_put_contents('php://input', $data);
 
         $this->mockUser->expects($this->once())
-                       ->method('authenticate')
-                       ->with('john@example.com', 'wrongpassword')
-                       ->willReturn(null);
+                    ->method('authenticate')
+                    ->with('john@example.com', 'wrongpassword')
+                    ->willReturn(null);
 
         $this->controller->login();
 
