@@ -1,5 +1,7 @@
 # user-post-management
 
+## NOTA: La rama con la ultima actualización es develop, main por buena practicas no se usa.
+
 ## Requisitos Previos
 
 - ### Backend (PHP):
